@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="us.ttyl.chance.domain.Country" table="t_country">
+    	   	    
+        <id name="countryId" type="integer">
+            <column name="country_id" />
+            <generator class="native"></generator>
+        </id>             
+                           
+        <property name="countryCode" type="string">
+            <column name="country_code" length="10" />
+        </property>
+   
+        <property name="countryDesc" type="string">
+            <column name="country_desc" length="255"/>
+        </property>         
+        
+        <set name="states" table="t_state" inverse="true" lazy="true">
+        	<key>
+        		<column name="country_id" not-null="true" />
+        	</key>
+            <one-to-many class="us.ttyl.chance.domain.State" />
+        </set>
+        
+    </class>
+</hibernate-mapping>

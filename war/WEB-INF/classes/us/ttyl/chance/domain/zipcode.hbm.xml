@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="us.ttyl.chance.domain.Zipcode" table="t_zipcode">
+    	   	    
+        <id name="zipcode" type="integer">
+            <column name="zipcode_id" />            
+        </id>
+        
+        <many-to-one name="city" class="us.ttyl.chance.domain.City" fetch="select" lazy="false">
+            <column name="city_id" not-null="true" />
+        </many-to-one>
+        
+        <many-to-one name="state" class="us.ttyl.chance.domain.State"  fetch="select" lazy="false">
+            <column name="state_id" not-null="true" />
+        </many-to-one>
+        
+         <many-to-one name="country" class="us.ttyl.chance.domain.Country" fetch="select" lazy="false">
+            <column name="country_id" not-null="true" />
+        </many-to-one>
+              
+        <property name="geoInfoLat" type="string">
+        	<column name="geo_info_lat" length="255" />
+        </property>   
+             
+        <property name="geoInfoLong" type="string">
+        	<column name="geo_info_long" length="255" />
+        </property>                
+              
+    </class>
+</hibernate-mapping>

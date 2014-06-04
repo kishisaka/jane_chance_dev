@@ -1,0 +1,9 @@
+- bug on main page (http://www.janechance.com/search). two dots at right hand corner
+
+- update public profile has zipcode and range entry in worng place. (http://www.janechance.com/register)
+
+- upper right hand corner, username is displayed poorly. (http://www.janechance.com/register) might be header problems for all pages wiht user logins. 
+
+- register and login urls links dont work on (http://www.janechance.com/search#) page. 
+
+- save profiles page is missing space between entries (http://www.janechance.com/profiles)

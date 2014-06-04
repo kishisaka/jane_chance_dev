@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="us.ttyl.chance.domain.State" table="t_state">
+    	   	    
+        <id name="stateId" type="integer">
+            <column name="state_id" />
+            <generator class="native"></generator>
+        </id>        
+        
+        <set name="cities" table="t_city" inverse="true" lazy="true">
+        	<key>
+        		<column name="state_id" not-null="true" />
+        	</key>
+            <one-to-many class="us.ttyl.chance.domain.City" />
+        </set>
+        
+        <many-to-one name="country" class="us.ttyl.chance.domain.Country" cascade="all" fetch="select" lazy="false">
+        	<column name="country_id" not-null="true" />
+        </many-to-one>        
+        
+        <property name="stateCode" type="string">
+        	<column name="state_code" length="20" />
+        </property>
+   
+        <property name="stateDesc" type="string">
+        	<column name="state_desc" length="255"/>
+        </property>  
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,53 @@
+/*syllabus special stuff*/
+
+body{
+	font-family:  Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+}
+
+a{
+	color: #666;
+	text-decoration: none;
+}
+
+a:link{
+	color: #666;
+	text-decoration: none;
+}
+
+a:visited{
+	color: #D0A760;
+	text-decoration: none;
+}
+
+a:hover,a:active{
+	color: #999;
+	text-decoration: underline;
+}
+
+.labels
+{
+	font-weight: bold;
+	color: #666;
+}
+
+
+.slyb_link {
+	color: #990000;
+	text-decoration: none;
+}
+
+.slyb_link:link  {
+	color: # 990000;
+	text-decoration: none;
+}
+
+.slyb_link:visited {
+	color: #666;
+	text-decoration: none;
+}
+
+.slyb_link:hover {		
+	color: #A63A00;
+	text-decoration: underline;
+}

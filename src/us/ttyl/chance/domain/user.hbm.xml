@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="us.ttyl.chance.domain.User" table="t_user">
+    	   	    
+        <id name="userId" type="integer">
+            <column name="user_id" />
+            <generator class="native"></generator>
+        </id>
+        
+        <property name="birthdate" type="date">
+            <column name="birthdate" length="255" />
+        </property> 
+         
+        <property name="password" type="string">
+            <column name="password" length="255" />
+        </property> 
+        
+        <property name="userName" type="string">
+        	<column name="user_name" length="255" />
+        </property> 
+        
+        <many-to-one name="ethnicity" class="us.ttyl.chance.domain.TEthnicity" fetch="select" lazy="false">
+            <column name="ethnicity_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="sex" class="us.ttyl.chance.domain.TSex" fetch="select" lazy="false">
+            <column name="sex_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="sexLookingFor" class="us.ttyl.chance.domain.TSex"  fetch="select" lazy="false">
+            <column name="sex_looking_for_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="eyeColor" class="us.ttyl.chance.domain.TColor"  fetch="select" lazy="false">
+            <column name="eye_color_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="hairColor" class="us.ttyl.chance.domain.TColor"  fetch="select" lazy="false">
+            <column name="hair_color_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="smoke" class="us.ttyl.chance.domain.TChoice"  fetch="select" lazy="false">
+            <column name="smoke_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="drink" class="us.ttyl.chance.domain.TChoice"  fetch="select" lazy="false">
+            <column name="drink_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="haveChildern" class="us.ttyl.chance.domain.THasChildren"  fetch="select" lazy="false">
+            <column name="have_children_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="wantChildern" class="us.ttyl.chance.domain.TWantsChildren"  fetch="select" lazy="false">
+            <column name="want_more_children_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="maritalStatus" class="us.ttyl.chance.domain.TMaritalStatus"  fetch="select" lazy="false">
+            <column name="marital_status_id" not-null="false" />
+        </many-to-one>
+        
+	 	<many-to-one name="bodyType" class="us.ttyl.chance.domain.TBodytype"  fetch="select" lazy="false">
+            <column name="userbodytype_id" not-null="false" />
+        </many-to-one>       
+        
+        <property name="catchphrase" type="string">
+            <column name="catchphrase" />
+        </property>   
+        
+        <property name="changePasswordCode" type="integer">
+            <column name="change_password_code" />
+        </property>   
+        
+        <property name="aboutme" type="string">
+            <column name="aboutme" />
+        </property>   
+        
+        
+        
+        
+        
+        <property name="idealAgeEnd" type="integer">
+            <column name="ideal_age_end" />
+        </property> 
+        
+        <property name="idealAgeStart" type="integer">
+            <column name="ideal_age_start" />
+        </property> 
+        
+        <property name="idealDistance" type="integer">
+            <column name="ideal_distance" />
+        </property> 
+        
+        <many-to-one name="idealZipcode" class="us.ttyl.chance.domain.Zipcode"  fetch="select" lazy="false">
+        	<column name="ideal_zipcode_id" not-null="false" />
+        </many-to-one>     
+        
+        
+
+        
+        <property name="idealHeightStart" type="integer">
+            <column name="ideal_height_start" />
+        </property> 
+        
+        <property name="height" type="integer">
+            <column name="height" />
+        </property> 
+        
+        <property name="idealHeightEnd" type="integer">
+            <column name="ideal_height_end" />
+        </property>    
+        
+        <many-to-one name="idealSmokes" class="us.ttyl.chance.domain.TChoice"  fetch="select" lazy="false">
+            <column name="ideal_smokes_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="idealDrinks" class="us.ttyl.chance.domain.TChoice"  fetch="select" lazy="false">
+            <column name="ideal_drinks_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="idealHasChildern" class="us.ttyl.chance.domain.THasChildren"  fetch="select" lazy="false">
+            <column name="ideal_has_children_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="idealWantsChildern" class="us.ttyl.chance.domain.TWantsChildren"  fetch="select" lazy="false">
+            <column name="ideal_wants_children_id" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="idealMaritalStatus" class="us.ttyl.chance.domain.TMaritalStatus"  fetch="select" lazy="false">
+        	<column name="ideal_marital_status_id" not-null="false" />
+        </many-to-one>
+        
+        <property name="termserviceagreement" type="integer">
+            <column name="termserviceagreement" />
+        </property> 
+        
+        <property name="profileStatus" type="integer">
+            <column name="profile_status" />
+        </property>
+         
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        
+        <many-to-one name="zipcode" class="us.ttyl.chance.domain.Zipcode"  fetch="select" lazy="false">
+        	<column name="zipcode_id" not-null="false" />
+        </many-to-one>        
+         
+        <set name="pictures" table="t_picture" inverse="true" lazy="false" >
+        	<key>
+        		<column name="user_id" not-null="true" />
+        	</key>
+            <one-to-many class="us.ttyl.chance.domain.TPicture" />
+        </set> 
+         
+        <set name="messages" table="t_usermessages" inverse="true" lazy="false">
+        	<key>
+        		<column name="user_id_to" not-null="true" />
+        	</key>
+            <one-to-many class="us.ttyl.chance.domain.TUsermessages" />
+        </set> 
+        
+        <bag name="idealBodyTypes" table="t_ideal_bodytype" cascade="save-update, delete" lazy="false">
+        	<key column="user_id" />        	
+            <many-to-many column="ideal_bodytype_id" class="us.ttyl.chance.domain.TBodytype" />
+        </bag>  
+        
+        <bag name="idealEthnicities" table="t_user_ideal_ethnicity" cascade="save-update, delete" lazy="false">
+        	<key column="user_id" />
+            <many-to-many column="ideal_ethnicity_id" class="us.ttyl.chance.domain.TEthnicity" />
+        </bag>        
+        
+        <bag name="idealLookingfor" table="t_user_ideal_lookingfor" cascade="save-update, delete" lazy="false">
+        	<key column="user_id" />        
+            <many-to-many column="ideal_lookingfor_id" class="us.ttyl.chance.domain.TLookingfor" />
+        </bag>                                        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="us.ttyl.chance.domain.Distance" table="t_distance">
+    	
+    	 <id name="distanceId" type="integer">
+            <column name="distance_id" />
+            <generator class="native"></generator>
+        </id>    
+    	   	    
+        <property name="distanceAmt" type="integer">
+            <column name="distance_amt" />            
+        </property>
+        
+        <many-to-one name="zipcodeIdTarget" class="us.ttyl.chance.domain.Zipcode" cascade="all" fetch="select" lazy="false">
+            <column name="zipcode_id_target" not-null="true" />
+        </many-to-one>
+        
+        <many-to-one name="zipcodeIdOrigin" class="us.ttyl.chance.domain.Zipcode" cascade="all" fetch="select" lazy="false">
+            <column name="zipcode_id_origin" not-null="true" />
+        </many-to-one>               
+              
+    </class>
+</hibernate-mapping>

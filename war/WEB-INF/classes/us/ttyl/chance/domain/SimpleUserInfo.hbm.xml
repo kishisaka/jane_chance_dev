@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="us.ttyl.chance.domain.SimpleUserInfo" table="t_user">
+    	   	    
+        <id name="userId" type="integer">
+            <column name="user_id" />
+            <generator class="native"></generator>
+        </id>        
+        
+        <property name="zipcode" type="string">
+            <column name="zipcode_id" length="255" />
+        </property>        
+        
+        <property name="distance" type="integer">
+            <column name="distance" />
+        </property>   
+        
+        <property name="pictureFilename" type="string">
+            <column name="picture_filename" length="255"/>
+        </property>
+        
+        <property name="catchPhrase" type="string">
+            <column name="catchphrase" length="255"/>
+        </property>
+        
+        <property name="city" type="string">
+            <column name="city_desc" length="255"/>
+        </property>
+        
+        <property name="state" type="string">
+            <column name="state_desc" length="255"/>
+        </property>
+        
+        <property name="userName" type="string">
+            <column name="user_name" length="255"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>

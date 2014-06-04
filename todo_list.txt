@@ -1,0 +1,23 @@
+- have all logging go to log4j file instead of console
+
+- add blogging capability for each user
+
+- add forum for discussing issues
+
+- add ant build/packaging file
+
+- add configuration files (dev/qa/prod) and have ant populate to hibernate and web.xml configuration areas
+
+- restrict number of images and size of images
+
+- support other images types (gif, png, etc).
+ 
+- think of some way to network users to each other (Facebook or Linkedin style).
+
+- add advanced search functionality to the search page (using the users profile). 
+  
+- on homae page google map, group by state and show 5 top zipcodes in each state.
+
+- add flex powerd image viewer  
+
+- use a magnify glass icon to denote search and a microscope icon to denote advanced search  
